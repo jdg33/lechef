@@ -2,7 +2,7 @@ import openai
 import streamlit as st
 
 # Set up your OpenAI API key
-api_key = "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"
+api_key = "REPLACE"
 openai.api_key = api_key
 
 def chat_with_model(messages):
