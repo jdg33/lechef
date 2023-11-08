@@ -2,12 +2,12 @@ import openai
 import streamlit as st
 
 # Set up your OpenAI API key
-api_key = "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"
+api_key = "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"
 openai.api_key = api_key
 
 def chat_with_model(messages):
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=messages
     )
     return response.choices[0].message['content']
