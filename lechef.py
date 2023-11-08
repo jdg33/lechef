@@ -33,7 +33,7 @@ option = st.radio("Choose Option", ("Generate Random Recipe", "Generate Recipe w
 if option == "Generate Random Recipe":
     if st.button("Generate Recipe"):
         recipe = generate_random_recipe()
-        st.text(f"Your new recipe:\n{recipe}")
+        st.write(f"Your new recipe:\n{recipe}")
 
 elif option == "Generate Recipe with Input":
     idea = st.text_input("Do you have any idea what you might want to eat? If you have no clue, leave this blank.")
@@ -43,4 +43,4 @@ elif option == "Generate Recipe with Input":
 
     if st.button("Generate Recipe"):
         recipe = generate_recipe_with_input(idea, diet, allergies, time_constraint)
-        st.text(f"Your new recipe:\n{recipe}")
+        st.write(f"Your new recipe:\n{recipe}")
