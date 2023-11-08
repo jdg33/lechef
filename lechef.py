@@ -1,16 +1,19 @@
 import openai
+from openai import OpenAI
 import streamlit as st
+
+client = OpenAI()
 
 # Set up your OpenAI API key
 api_key = st.secrets["OAPI"]
 openai.api_key = api_key
 
 def chat_with_model(messages):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    response = client.chat.completions.create(
+        model="gpt-4",
         messages=messages
     )
-    return response.choices[0].message['content']
+    return response.choices[0].message.content
 
 def generate_random_recipe():
     response = chat_with_model([
