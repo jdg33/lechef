@@ -1,12 +1,13 @@
 import openai
 import streamlit as st
+import time
 
 # Set up your OpenAI API key
 api_key = st.secrets["OAPI"]
 openai.api_key = api_key
 
 def chat_with_model(messages):
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model="gpt-4-1106-preview",
         messages=messages
     )
