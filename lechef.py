@@ -6,6 +6,8 @@ import time
 api_key = st.secrets["OAPI"]
 openai.api_key = api_key
 
+file = open("RECIPEGIT","w")
+
 def chat_with_model(messages):
     response = openai.chat.completions.create(
         model="gpt-4-1106-preview",
@@ -56,7 +58,7 @@ if option == "Generate Recipe with Variables":
 
 elif option == "Generate Random Recipe":
     if st.button("Generate Recipe"):
-        with open('RECIPESTEXT.txt', 'a') as text_file:
+        with open('RECIPEGIT', 'a') as text_file:
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_random_recipe()
                 st.write(f"Your new recipe:\n{recipe}")
@@ -71,4 +73,6 @@ elif option == "Generate Recipe from an Idea":
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_recipe_with_idea(idea)
                 st.write(f"Your new recipe:\n{recipe}")
-
+                text_file.write("\n\n\n" + recipe + "\n\n\n")
+                
+file.close()
