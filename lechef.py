@@ -36,7 +36,7 @@ def generate_recipe_with_idea(idea):
 
 st.title("What to cook, what to cook...")
 
-option = st.radio("Choose your option", ("Generate Recipe with Variables","Generate Recipe from an Idea", "Generate Random Recipe"))
+option = st.radio("Choose your option", ("Generate Recipe with Variables","Generate Random Recipe", "Generate Recipe from an Idea"))
 
 if option == "Generate Recipe with Variables":
     diet = st.text_input("Do you want to adhere to any specific diets? (e.g. vegetarian, no red meat, paleo, keto, etc.)")
@@ -56,7 +56,7 @@ if option == "Generate Recipe with Variables":
 
 elif option == "Generate Random Recipe":
     if st.button("Generate Recipe"):
-        with open("RECIPESTEXT.txt", "a") as text_file:
+        with open('RECIPESTEXT.txt', 'a') as text_file:
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_random_recipe()
                 st.write(f"Your new recipe:\n{recipe}")
