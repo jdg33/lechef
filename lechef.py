@@ -56,7 +56,7 @@ if option == "Generate Recipe with Variables":
 
 elif option == "Generate Random Recipe":
     if st.button("Generate Recipe"):
-        f = open(RECIPESTEXT.txt, "a")
+        f = open("RECIPESTEXT.txt", "w")
         with st.spinner('Preparing your recipe...'):
             recipe = generate_random_recipe()
             st.write(f"Your new recipe:\n{recipe}")
