@@ -50,7 +50,7 @@ if option == "Generate Recipe with Variables":
     audience = st.selectbox('How many people are you cooking for?',('1','2','3','4','5','6'))
 
     if st.button("Generate Recipe"):
-        with open("RECIPESTEXT", "a") as text_file:
+        with open("RECIPESTEXT.txt", "a") as text_file:
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_recipe_with_input(diet, allergies, req, cuisine, meal, time_constraint, audience)
                 st.write(f"Your new recipe:\n{recipe}")
@@ -58,7 +58,7 @@ if option == "Generate Recipe with Variables":
 
 elif option == "Generate Random Recipe":
     if st.button("Generate Recipe"):
-        with open('RECIPEGIT', 'a') as text_file:
+        with open("RECIPESTEXT.txt", "w") as text_file:
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_random_recipe()
                 st.write(f"Your new recipe:\n{recipe}")
@@ -69,7 +69,7 @@ elif option == "Generate Recipe from an Idea":
     idea = st.text_input("What are you interested in making?")
 
     if st.button("Generate Recipe"):
-        with open("RECIPESTEXT", "a") as text_file:
+        with open("RECIPESTEXT.txt", "a") as text_file:
             with st.spinner('Preparing your recipe...'):
                 recipe = generate_recipe_with_idea(idea)
                 st.write(f"Your new recipe:\n{recipe}")
