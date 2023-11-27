@@ -1,5 +1,7 @@
 import openai
 import streamlit as st
+import streamlit_gheets
+
 from streamlit_gsheets import GSheetsConnection
 
 # Set up your OpenAI API key
