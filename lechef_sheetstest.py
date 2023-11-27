@@ -47,7 +47,7 @@ if option == "Generate Recipe with Variables":
     req = st.text_input("Are there any ingredients you definitely want to use?")
     cuisine = st.text_input("Preference on cuisine type (Italian, Chinese, American, Etc)?")
     meal = st.selectbox('Is this for a specific meal of the day?',('Does not matter!','Breakfast','Lunch','Dinner','Dessert'))
-    time_constraint = st.selectbox('How long do you want to spend making this meal?',('15 minutes','30 minutes','45 minutes','1 hour','More than hour', 'Doesn't matter!'))
+    time_constraint = st.selectbox('How long do you want to spend making this meal?',('Does not matter!','15 minutes','30 minutes','45 minutes','1 hour','More than hour'))
     audience = st.selectbox('How many people are you cooking for?',('1','2','3','4','5','6'))
 
     if st.button("Generate Recipe"):
